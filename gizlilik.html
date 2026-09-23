@@ -21,8 +21,10 @@
 
   <div class="kutu">
     <p><strong>Özet:</strong> Uygulama hesap açtırmaz, kimlik sormaz,
-    reklam göstermez, analitik toplamaz ve kullanıcıyı takip etmez.
-    Okuma ilerlemen ve coin bakiyen yalnızca kendi cihazında durur.</p>
+    reklam göstermez ve kullanıcıyı takip etmez. Okuma ilerlemen ve coin
+    bakiyen yalnızca kendi cihazında durur. Uygulamanın hangi ekranlarının
+    kullanıldığını <strong>anonim olarak</strong> ölçüyoruz; aşağıda tam
+    olarak neyin gönderildiği yazıyor.</p>
   </div>
 
   <h2>Cihazda tutulan bilgiler</h2>
@@ -60,13 +62,37 @@
   hangi diziyi okuduğun uygulamanın dışına çıkmıyor. Bildirimleri Hesabım
   ekranından ya da telefonunun ayarlarından kapatabilirsin.</p>
 
+  <h2>Anonim kullanım ölçümü</h2>
+  <p>Uygulamayı geliştirebilmek için, hangi adımların kullanıldığını
+  ölçüyoruz. Bunun için <a href="https://posthog.com/privacy" rel="noopener">PostHog</a>
+  kullanılıyor ve gönderilen şey <strong>tam olarak</strong> şudur:</p>
+  <ul>
+    <li>Olayın adı: uygulama açıldı, bölüm açıldı, sesli dinleme başlatıldı,
+      kilitli bölüm ekranı görüldü, bölüm coinle açıldı, bekleme sonunda
+      açıldı, coin paketi satın alındı, abonelik başlatıldı.</li>
+    <li>Olayla ilgili birkaç teknik değer: hangi dizi, kaçıncı bölüm,
+      kaç coin harcandı.</li>
+    <li>Uygulama sürümü ve platform (iOS / Android).</li>
+    <li><strong>Cihazda üretilen rastgele bir kimlik.</strong> Bu kimlik
+      yalnızca aynı cihazdan gelen olayları bir araya toplamak içindir.
+      Adınla, e-postanla, telefonunla veya herhangi bir hesapla
+      ilişkilendirilmez — uygulama bunların hiçbirini bilmiyor.
+      Uygulamayı silersen kimlik de silinir ve geri getirilemez.</li>
+  </ul>
+  <p>Gönderilmeyenler de aynı ölçüde önemli: <strong>okuduğun metin,
+  arama yaptıkların, profil adın, konumun ve reklam kimliğin
+  gönderilmiyor.</strong> IP adresinden ülke çıkarımı da kapalıdır
+  (<code>$geoip_disable</code>). Bu veri hiçbir reklam ağıyla paylaşılmaz,
+  satılmaz ve uygulamalar arası takip için kullanılmaz.</p>
+
   <h2>Toplanmayanlar</h2>
   <ul>
     <li>Ad, e-posta, telefon numarası veya herhangi bir hesap bilgisi</li>
     <li>Konum</li>
     <li>Rehber, fotoğraf, dosya veya mikrofon erişimi</li>
     <li>Reklam kimliği (uygulamada reklam yoktur)</li>
-    <li>Analitik veya kullanım takibi</li>
+    <li>Okuduğun metnin kendisi veya arama geçmişin</li>
+    <li>Uygulamalar arası ya da web üzerinde takip</li>
   </ul>
 
   <h2>Çocuklar</h2>
@@ -78,6 +104,7 @@
   <ul>
     <li><strong>Bunny CDN</strong> — ses dosyalarının dağıtımı</li>
     <li><strong>RevenueCat</strong> — satın alma ve abonelik doğrulaması</li>
+    <li><strong>PostHog</strong> — anonim kullanım ölçümü</li>
     <li><strong>Apple App Store / Google Play</strong> — ödeme altyapısı</li>
   </ul>
   <p>Bunların dışında hiçbir üçüncü tarafa veri aktarılmaz, veri satışı
@@ -100,6 +127,7 @@
   <nav>
     <a href="index.html">Ana sayfa</a>
     <a href="destek.html">Destek</a>
+    <a href="kullanim-kosullari.html">Kullanım koşulları</a>
   </nav>
 </main>
 <footer>
